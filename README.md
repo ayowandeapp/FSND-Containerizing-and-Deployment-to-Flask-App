@@ -87,7 +87,8 @@ Completing the project involves several steps:
 
 For more detail about each of these steps, see the project lesson.
 
-github token: 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
+github token: 
+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
 
 export TOKEN=`curl --data '{"email":"ayooluwa71@gmail.com","password":"mypwd"}' --header "Content-Type: application/json" -X POST localhost:8080/auth  | jq -r '.token'`
 
