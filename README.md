@@ -1,5 +1,7 @@
 # Deploying a Flask API
 
+external IP:ae5118660fa544864a88955d197cb673-514428030.us-east-2.elb.amazonaws.com
+
 This is the project starter repo for the course Server Deployment, Containerization, and Testing.
 
 In this project you will containerize and deploy a Flask API to a Kubernetes cluster using Docker, AWS EKS, CodePipeline, and CodeBuild.
@@ -93,3 +95,6 @@ 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
 export TOKEN=`curl --data '{"email":"ayooluwa71@gmail.com","password":"mypwd"}' --header "Content-Type: application/json" -X POST localhost:8080/auth  | jq -r '.token'`
 
 curl --request GET 'http://localhost:8080/contents' -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjQ4MjU4NzIsIm5iZiI6MTY2MzYxNjI3MiwiZW1haWwiOiJheW9vbHV3YTcxQGdtYWlsLmNvbSJ9.BwC5ZPk-_DVFGt0h2YxkDKk9mM-pJ8Fo97Mx4pCRAFk" | jq .
+export TOKEN=`curl -d '{"email":"ayooluwa71@gmail.com","password":"mypwd"}' -H "Content-Type: application/json" -X POST ae5118660fa544864a88955d197cb673-514428030.us-east-2.elb.amazonaws.com/auth  | jq -r '.token'`
+curl --request GET 'ae5118660fa544864a88955d197cb673-514428030.us-east-2.elb.amazonaws.com/contents' -H "Authorization: Bearer $eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjUzMDY2MTEsIm5iZiI6MTY2NDA5NzAxMSwiZW1haWwiOiJheW9vbHV3YTcxQGdtYWlsLmNvbSJ9.si5aafSVk-zuuuZrjqicUCajafHZlwCadiVsOz1QFQs" | jq
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjUzMDY2MTEsIm5iZiI6MTY2NDA5NzAxMSwiZW1haWwiOiJheW9vbHV3YTcxQGdtYWlsLmNvbSJ9.si5aafSVk-zuuuZrjqicUCajafHZlwCadiVsOz1QFQs
